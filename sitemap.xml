@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://4st.tech/links/index.html</loc>
+    <loc>https://4st.tech/repository/index.html</loc>
     
     <lastmod>2021-08-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://4st.tech/repository/index.html</loc>
+    <loc>https://4st.tech/links/index.html</loc>
     
     <lastmod>2021-08-04</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://4st.tech/categories/index.html</loc>
+    <loc>https://4st.tech/books/index.html</loc>
     
     <lastmod>2021-08-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://4st.tech/books/index.html</loc>
+    <loc>https://4st.tech/categories/index.html</loc>
     
     <lastmod>2021-08-04</lastmod>
     
@@ -221,20 +221,6 @@
   </url>
   
   <url>
-    <loc>https://4st.tech/tags/switch-case/</loc>
-    <lastmod>2021-08-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://4st.tech/tags/switch-case%E8%BF%98%E5%8E%9F/</loc>
-    <lastmod>2021-08-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://4st.tech/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/</loc>
     <lastmod>2021-08-08</lastmod>
     <changefreq>daily</changefreq>
@@ -250,6 +236,20 @@
   
   <url>
     <loc>https://4st.tech/tags/C-%E5%A4%A7%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/</loc>
+    <lastmod>2021-08-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://4st.tech/tags/switch-case/</loc>
+    <lastmod>2021-08-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://4st.tech/tags/switch-case%E8%BF%98%E5%8E%9F/</loc>
     <lastmod>2021-08-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

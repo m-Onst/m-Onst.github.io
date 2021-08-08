@@ -1,0 +1,9 @@
+http://4st.tech/2021/08/07/switch-case-ni-xiang-fen-xi-yu-huan-yuan/
+http://4st.tech/2021/08/04/hello-world/
+http://4st.tech/2021/08/04/c-c-chu-fa-de-fei-chang-gui-you-hua-ji-qi-shi-bie-yu-huan-yuan/
+http://4st.tech/2021/08/03/c-c-chu-fa-de-chang-gui-you-hua-ji-qi-shi-bie-yu-huan-yuan/
+http://4st.tech/2021/08/02/ji-chu-suan-fa-kuai-su-xuan-ze-suan-fa/
+http://4st.tech/2021/05/18/ji-chu-suan-fa-pai-xu-he-er-fen/
+http://4st.tech/2021/04/26/ring3-huan-fu-wu-de-chuang-jian-he-shi-yong/
+http://4st.tech/2021/04/07/li-yong-rop-tu-po-dep-fen-xi-expolit-me-bing-zuo-rop/
+http://4st.tech/2021/04/06/zhan-yi-chu-fen-xi-exploit-me-a/

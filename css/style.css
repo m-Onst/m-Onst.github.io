@@ -122,8 +122,14 @@ sub {
   bottom: -0.25em;
 }
 
+/* 图片居中修改的这里 */
 img {
   border: 0;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 3px;
+  text-align: center;
+  display: block;
 }
 
 svg:not(:root) {

@@ -186,10 +186,14 @@
 
     
       
-  <div class="widget">
+  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+  <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/C-%E5%A4%A7%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" style="font-size: 13px;">C++大整数运算</a> <a href="/tags/rop/" style="font-size: 13px;">rop</a> <a href="/tags/shellcode/" style="font-size: 13.5px;">shellcode</a> <a href="/tags/switch-case/" style="font-size: 13px;">switch-case</a> <a href="/tags/switch-case%E8%BF%98%E5%8E%9F/" style="font-size: 13px;">switch-case还原</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 13px;">二分</a> <a href="/tags/%E5%86%85%E6%A0%B8/" style="font-size: 13px;">内核</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 13px;">前缀和</a> <a href="/tags/%E5%A4%A7%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" style="font-size: 13px;">大整数运算</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 13px;">差分</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">归并排序</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 13.5px;">快速排序</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/" style="font-size: 13px;">快速选择算法</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">排序</a> <a href="/tags/%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86/" style="font-size: 13px;">整数二分</a> <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/" style="font-size: 13px;">浮点数二分</a> <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" style="font-size: 13.5px;">漏洞利用</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 14px;">逆向</a> <a href="/tags/%E9%99%A4%E6%B3%95%E4%BC%98%E5%8C%96/" style="font-size: 13.5px;">除法优化</a> <a href="/tags/%E9%A9%B1%E5%8A%A8/" style="font-size: 13px;">驱动</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 13px;">高精度</a>
+    <div id="myCanvasContainer" class="widget tagcloud">
+      <canvas width="250" height="250" id="resCanvas" style="width:100%">
+        <a href="/tags/C-%E5%A4%A7%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" style="font-size: 10px;">C++大整数运算</a> <a href="/tags/rop/" style="font-size: 10px;">rop</a> <a href="/tags/shellcode/" style="font-size: 15px;">shellcode</a> <a href="/tags/switch-case/" style="font-size: 10px;">switch-case</a> <a href="/tags/switch-case%E8%BF%98%E5%8E%9F/" style="font-size: 10px;">switch-case还原</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10px;">二分</a> <a href="/tags/%E5%86%85%E6%A0%B8/" style="font-size: 10px;">内核</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 10px;">前缀和</a> <a href="/tags/%E5%A4%A7%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" style="font-size: 10px;">大整数运算</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 10px;">差分</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">归并排序</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 15px;">快速排序</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95/" style="font-size: 10px;">快速选择算法</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%95%B4%E6%95%B0%E4%BA%8C%E5%88%86/" style="font-size: 10px;">整数二分</a> <a href="/tags/%E6%B5%AE%E7%82%B9%E6%95%B0%E4%BA%8C%E5%88%86/" style="font-size: 10px;">浮点数二分</a> <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" style="font-size: 15px;">漏洞利用</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 20px;">逆向</a> <a href="/tags/%E9%99%A4%E6%B3%95%E4%BC%98%E5%8C%96/" style="font-size: 15px;">除法优化</a> <a href="/tags/%E9%A9%B1%E5%8A%A8/" style="font-size: 10px;">驱动</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 10px;">高精度</a>
+      </canvas>
     </div>
   </div>
 
@@ -489,6 +493,115 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+<div id="go-top"></div>
+<style type="text/css">
+#go-top {
+ width:40px;height:36px;
+ background-color:#DDA0DD;
+ position:relative;
+ border-radius:2px;
+ position:fixed;right:10px;bottom:60px;
+ cursor:pointer;display:none;
+}
+#go-top:after {
+ content:" ";
+ position:absolute;left:14px;top:14px;
+ border-top:2px solid #fff;border-right:2px solid #fff;
+ width:12px;height:12px;
+ transform:rotate(-45deg);
+}
+#go-top:hover {
+ background-color:#8A2BE2;
+}
+</style>
+<script>
+$(function () {
+  var top=$("#go-top");
+  $(window).scroll(function () {
+    ($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
+    $("#go-top").click(function () {
+      $('body,html').animate({scrollTop:0});
+      return false();
+    })
+  });
+});
+</script>
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+          var code = $(this).parent().find(".code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('复制')
+          }, 300)
+        }).append(e)
+      })
+    })
+  </script>
+
+  
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

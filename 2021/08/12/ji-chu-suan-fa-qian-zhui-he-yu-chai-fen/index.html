@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/m-Onst/pics/main/blog/202108/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%B1%82%E5%AD%90%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0%E4%B9%8B%E5%92%8C.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/m-Onst/pics/main/blog/202108/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84%E7%9A%84%E6%9B%B4%E6%96%B0.png">
 <meta property="article:published_time" content="2021-08-12T09:26:19.000Z">
-<meta property="article:modified_time" content="2021-08-12T09:56:18.111Z">
+<meta property="article:modified_time" content="2021-08-14T03:58:02.636Z">
 <meta property="article:author" content="iforget">
 <meta property="article:tag" content="前缀和">
 <meta property="article:tag" content="差分">
@@ -380,6 +380,7 @@
 <h3 id="求元素s_i">求元素<span class="math inline">\(S_i\)</span></h3>
 <p>将边界值<span class="math inline">\(S_0\)</span>设为0，则可以使用迭代公式：<span class="math inline">\(S_i = S_{i-1} + a_i\)</span>即可计算出来，其代码为：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">  S[i] = S[i - <span class="number">1</span>] + A[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，<strong>如果使用上述公式来求元素<span class="math inline">\(S_i\)</span>的话，那么在输入阶段，原始数组的下标也要从0挪到从1开始</strong>。</p>
 <p><strong>前缀和中的第0个元素为什么要设计成值为0，并且前缀和数组的下标是从1开始的</strong>？原因是为了统一操作，将求原数组中某一区间内的元素和的公式统一，不用处理边界值，不用再进行条件判断而设置的哨兵节点。</p>
 <h3 id="前缀和的作用">前缀和的作用</h3>
 <p>可以快速的求出原数组中一段元素的和，如：求<code>[l, r]</code>范围内的元素的和，其值为：<span class="math inline">\(S_r - S_{l - 1}\)</span>。</p>
@@ -391,6 +392,7 @@
 <p><img src="https://raw.githubusercontent.com/m-Onst/pics/main/blog/202108/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%89%8D%E7%BC%80%E5%92%8C.png" /></p>
 <p>橘黄色部分的元素之和等于绿颜色矩形中的元素之和加上蓝颜色举行中的颜色之和减去重复运算的蓝绿矩形的交集中的元素之和，最后加上元素<span class="math inline">\(a_{ij}\)</span>，即：<span class="math inline">\(S_{ij} = S_{i - 1, j} + S_{i, j - 1} - S_{i -1, j- 1} + a_{ij}\)</span></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">    S[i][j] = S[i - <span class="number">1</span>][j] + S[i][j - <span class="number">1</span>] - S[i - <span class="number">1</span>][j - <span class="number">1</span>] + A[i][j];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在记忆的时候，可以按照上述颜色的图形来记忆，也可以找参照物，即：<strong>使用子矩阵的右下角坐标为参照物</strong>，找上述颜色中的矩形是和它是同一行、前一行、同一列还是前一列。这样就可以快速写出上述公式了。</p>
 <h3 id="求给定区间范围内的元素之和">求给定区间范围内的元素之和</h3>
 <p>其实就是利用的集合的操作，给定两个坐标点<span class="math inline">\((x_1, y_1)\)</span>​和<span class="math inline">\((x_2, y_2)\)</span>​，则在这两个点内的矩阵的元素之和为： <span class="math display">\[
 S_{x_2, y_2} - S_{x_1 - 1, y_2} - S_{x_2, y_1 - 1} + S_{x_1 - 1, y_1 - 1}
@@ -400,8 +402,9 @@ S_{x_2, y_2} - S_{x_1 - 1, y_2} - S_{x_2, y_1 - 1} + S_{x_1 - 1, y_1 - 1}
 <ul>
 <li><span class="math inline">\(S_{x_1 - 1, y_2}\)</span>代表的是左侧部分的长方形矩阵</li>
 <li><span class="math inline">\(S_{x_2, y_1 - 1}\)</span>代表的是上面部分的长方形矩阵</li>
-<li><span class="math inline">\(S_{x_1 - 1, y_1 - 1}\)</span>代表的是被重复减去的那一块正方形矩阵</li>
+<li><span class="math inline">\(S_{x_1 - 1, y_1 - 1}\)</span>​代表的是被重复减去的那一块正方形矩阵</li>
 </ul>
+<p>快速写出上述求解公式的方法与求元素<span class="math inline">\(S_i\)</span>一致，以待求子矩阵的左上角坐标和右下角坐标为参照物，找到参与运算的子矩阵元素是和这些坐标是同一行、同一列、前一行还是前一列即可快速写出。</p>
 <h1 id="差分">差分</h1>
 <p>差分和前缀和是一组逆运算。设原数组A中的第i个元素为<span class="math inline">\(a_i\)</span>，需要构造一个数组B，使得数组A是数组B的前缀和数组，即：<span class="math inline">\(a_i = b_1 + b_2 + ... + b_i\)</span>。B数组称为数组A的差分数组，A数组称为B数组的前缀和数组。</p>
 <h2 id="一维数组">一维数组</h2>
@@ -434,6 +437,8 @@ B_{x_1, y_1} = B_{x_1, y_1} + C \\ B_{x_1, y_2} =  B_{x_1, y_2} - C \\ B_{x_2, y
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2, <span class="keyword">int</span> y2, <span class="keyword">int</span> C)</span> </span>&#123;</span><br><span class="line">  B[x1][y1] += C;</span><br><span class="line">  B[x1][y2 + <span class="number">1</span>] -= C;</span><br><span class="line">  B[x2 + <span class="number">1</span>][y1] -= C;</span><br><span class="line">  B[x2 + <span class="number">1</span>][y2 + <span class="number">1</span>] += C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>二维差分数组的构造和一维差分数组的构造一样，利用哨兵，可以将差分数组的构造和更新的操作统一起来。构造二维差分数组的方法为：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">insert</span>(i, j, i, j, a[i][j]);</span><br></pre></td></tr></table></figure>
+<p>该函数的作用是：起始点坐标到终点坐标的矩阵中的元素都加上常数C。所以在插入原数组时，其实就是在说：在当前坐标下，将原数组的元素<code>a[i][j]</code>视为常数C，使其满足以元素<code>a[i][j]</code>为其前缀和的差分性质。</p>
+<p>在最后计算加和得到原矩阵时，使用的是计算前缀数组的方式来迭代计算的。也就是说要根据差分矩阵计算原矩阵，其实就是求前缀和的过程。所以需要使用二维数组求前缀和的方式来计算。</p>
 
       
     </div>
